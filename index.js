@@ -1,20 +1,9 @@
-const express = require("express");
-const breadsController = require("./controllers/breads_controller");
-require("dotenv").config();
-const PORT = process.env.PORT;
+// import app from server.js file
+const app = require('./server')
 
-const app = express();
+// CONFIGURATION
+require('dotenv').config()
+const PORT = process.env.PORT
 
-// MIDDLEWARE
-app.set("view engine", "jsx");
-app.engine("jsx", require("express-react-views").createEngine());
-
-app.get("/", (req, res) => {
-  res.send("Welcome to the bread app!");
-});
-
-app.use("/breads", breadsController);
-
-app.listen(PORT, () => {
-  console.log(`\n***Listening on port:${PORT}****\n`);
-});
+// LISTEN
+app.listen(PORT, () => console.log(`\n***Running on port:${PORT}***\n`))
