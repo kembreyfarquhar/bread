@@ -1,4 +1,4 @@
-const React = require('react')
+const React = require('react');
 
 function Default(html) {
   return (
@@ -30,7 +30,7 @@ function Default(html) {
         </div>
       </body>
     </html>
-  )
+  );
 }
 
-module.exports = Default
+module.exports = Default;

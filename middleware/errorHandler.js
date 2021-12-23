@@ -1,10 +1,10 @@
 function errorHandler(err, _req, res, _next) {
-  console.log(err.name)
-  console.log(err.message ?? 'no err.message')
+  console.log(err.name);
+  console.log(err.message ?? 'no err.message');
   for (key in err) {
-    console.log(`${key}: ${err[key]}`)
+    console.log(`${key}: ${err[key]}`);
   }
-  res.send(err.message ?? 'ERROR')
+  res.send(err.message ?? 'ERROR');
 }
 
-module.exports = errorHandler
+module.exports = errorHandler;

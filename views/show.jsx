@@ -1,5 +1,5 @@
-const React = require('react')
-const Default = require('./layouts/default')
+const React = require('react');
+const Default = require('./layouts/default');
 
 function Show({ bread }) {
   return (
@@ -23,7 +23,7 @@ function Show({ bread }) {
         <a href="/breads">Go home</a>
       </li>
     </Default>
-  )
+  );
 }
 
-module.exports = Show
+module.exports = Show;

@@ -1,7 +1,7 @@
 // require mongoose
-const mongoose = require('mongoose')
+const mongoose = require('mongoose');
 // creating shorthand for the Schema constructor
-const { Schema } = mongoose
+const { Schema } = mongoose;
 
 // schema
 const breadSchema = new Schema({
@@ -16,14 +16,15 @@ const breadSchema = new Schema({
     type: Schema.Types.ObjectID,
     ref: 'Baker',
   },
-})
+});
 
 // helper methods
-breadSchema.methods.getBakedBy = () =>
-  `${this.name} was baked with love by ${
+breadSchema.methods.getBakedBy = function () {
+  return `${this.name} was baked with love by ${
     this.baker.name
-  }, who has been with us since ${this.baker.startDate.getFullYear()}`
+  }, who has been with us since ${this.baker.startDate.getFullYear()}`;
+};
 
 // model and export
-const Bread = mongoose.model('Bread', breadSchema)
-module.exports = Bread
+const Bread = mongoose.model('Bread', breadSchema);
+module.exports = Bread;

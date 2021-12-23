@@ -1,5 +1,5 @@
-const React = require('react')
-const Default = require('./layouts/default')
+const React = require('react');
+const Default = require('./layouts/default');
 
 function Edit({ bread, bakers }) {
   return (
@@ -24,7 +24,7 @@ function Edit({ bread, bakers }) {
         <input type="submit" />
       </form>
     </Default>
-  )
+  );
 }
 
-module.exports = Edit
+module.exports = Edit;

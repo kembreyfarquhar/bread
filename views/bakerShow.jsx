@@ -1,5 +1,5 @@
-const React = require('react')
-const Default = require('./layouts/default')
+const React = require('react');
+const Default = require('./layouts/default');
 
 function Show({ baker }) {
   return (
@@ -19,7 +19,7 @@ function Show({ baker }) {
         <input type="submit" value="DELETE" />
       </form>
     </Default>
-  )
+  );
 }
 
-module.exports = Show
+module.exports = Show;

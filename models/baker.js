@@ -1,7 +1,7 @@
 // dependencies
-const mongoose = require('mongoose')
-const Bread = require('./bread')
-const { Schema } = mongoose
+const mongoose = require('mongoose');
+const Bread = require('./bread');
+const { Schema } = mongoose;
 
 // schema
 const bakerSchema = new Schema(
@@ -18,23 +18,23 @@ const bakerSchema = new Schema(
     bio: String,
   },
   { toJSON: { virtuals: true } }
-)
+);
 
 // virtuals
 bakerSchema.virtual('breads', {
   ref: 'Bread',
   localField: '_id',
   foreignField: 'baker',
-})
+});
 
 bakerSchema.post('findOneAndDelete', async () => {
   try {
-    await Bread.deleteMany({ baker: this._conditions._id })
+    await Bread.deleteMany({ baker: this._conditions._id });
   } catch (err) {
-    throw err
+    throw err;
   }
-})
+});
 
 // model and export
-const Baker = mongoose.model('Baker', bakerSchema)
-module.exports = Baker
+const Baker = mongoose.model('Baker', bakerSchema);
+module.exports = Baker;
